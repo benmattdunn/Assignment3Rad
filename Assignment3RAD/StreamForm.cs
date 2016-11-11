@@ -32,6 +32,7 @@ namespace Assignment3RAD
         private string _displayCostInfo = "Your credit card has been charged ";
         public StreamForm(double cost, string movieTitle)
         {
+            // what I was supposed to do. 
             this._movieTitle = movieTitle;
             InitializeComponent();
             this.TitleMessagelabel.Text = this._displayInfoMain;
@@ -39,6 +40,7 @@ namespace Assignment3RAD
             this.MovieLabel.Text = this._displayInfoMovieOne + movieTitle + this._displayInfoMovieTwo;
             if (movieTitle.Equals("DeadPool"))
             {
+                //what I decided to do.
                 
                 this.MessageLayoutPanel.Visible = false;
                 this.Width = Resources.deadpool_ver13.Width + 10;
@@ -48,16 +50,27 @@ namespace Assignment3RAD
                 Stream StreamSound = Resources.someSoundFile;
                 soundplayer = new System.Media.SoundPlayer(StreamSound);
                 soundplayer.Play();
+                // really done cause I wanted to see how C# handles sound files internally, but still fun.
             }
 
         }
-
+        /// <summary>
+        /// closes the program.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OKButton_Click(object sender, EventArgs e)
         {
             this.Dispose();
             Application.Exit();
         }
 
+        /// <summary>
+        /// if the easter egg is activated, closes the program
+        /// after a message from our sponsers.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (this._movieTitle.Equals("DeadPool"))
