@@ -7,7 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/// <summary>
+/// Created by Ben M. Dunn 
+/// Student #100098171
+/// Final Version 11, novemeber 2016
+/// 
+/// simple splash screen for user control and loading. 
+/// waits three seconds then loads up the next form. 
+/// </summary>
 namespace Assignment3RAD
 {
     public partial class SplashScreen : Form

@@ -4,7 +4,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/// <summary>
+/// Created by Ben M. Dunn 
+/// Student #100098171
+/// Final Version 11, novemeber 2016
+/// 
+/// class that holds the required movie information for a single
+/// movie.
+/// </summary>
 namespace Assignment3RAD
 {
 

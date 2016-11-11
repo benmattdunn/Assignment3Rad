@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Assignment3RAD
 {
+    /// <summary>
+    /// item to carry all the information related
+    /// to the movie from the class. 
+    /// </summary>
     public class MovieLists
     {
         public string selectedMovie { get; set; }

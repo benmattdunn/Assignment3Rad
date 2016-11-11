@@ -1,5 +1,12 @@
 ﻿namespace Assignment3RAD
 {
+    /// <summary>
+    /// Created by Ben M. Dunn 
+    /// Student #100098171
+    /// Final Version 11, novemeber 2016
+    /// 
+    /// see selection form.cs for more details. 
+    /// </summary>
     partial class SelectionForm
     {
         /// <summary>

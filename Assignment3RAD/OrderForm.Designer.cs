@@ -77,7 +77,6 @@ namespace Assignment3RAD
             this.CatagoryLabel = new System.Windows.Forms.Label();
             this.MovieTitleTextBox = new System.Windows.Forms.TextBox();
             this.CatagoryTextBox = new System.Windows.Forms.TextBox();
-            this.MoviePictureBox = new System.Windows.Forms.PictureBox();
             this.OrderButtonsTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.YourSelectionGroupBox = new System.Windows.Forms.GroupBox();
             this.OrderTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -98,11 +97,11 @@ namespace Assignment3RAD
             this.CancelButton = new System.Windows.Forms.Button();
             this.StreamButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
+            this.MoviePictureBox = new System.Windows.Forms.PictureBox();
             this.OrderFormMenuStrip.SuspendLayout();
             this.OrderFormMainTableLayoutPanel.SuspendLayout();
             this.MovieSelectedGroupBox.SuspendLayout();
             this.MovieSelectedTableLayout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MoviePictureBox)).BeginInit();
             this.OrderButtonsTableLayoutPanel.SuspendLayout();
             this.YourSelectionGroupBox.SuspendLayout();
             this.OrderTableLayoutPanel.SuspendLayout();
@@ -111,6 +110,7 @@ namespace Assignment3RAD
             this.SalesTaxTableLayoutPanel.SuspendLayout();
             this.GrandTotalTableLayoutPanel.SuspendLayout();
             this.ButtonsTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MoviePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // OrderFormMenuStrip
@@ -139,11 +139,12 @@ namespace Assignment3RAD
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.printToolStripMenuItem.Text = "Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printClick);
             // 
             // streamToolStripMenuItem
             // 
             this.streamToolStripMenuItem.Name = "streamToolStripMenuItem";
-            this.streamToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.streamToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
             this.streamToolStripMenuItem.Text = "Stream";
             this.streamToolStripMenuItem.Click += new System.EventHandler(this.StreamClick);
             // 
@@ -165,8 +166,9 @@ namespace Assignment3RAD
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // OrderFormMainTableLayoutPanel
             // 
@@ -247,15 +249,6 @@ namespace Assignment3RAD
             this.CatagoryTextBox.ReadOnly = true;
             this.CatagoryTextBox.Size = new System.Drawing.Size(283, 20);
             this.CatagoryTextBox.TabIndex = 3;
-            // 
-            // MoviePictureBox
-            // 
-            this.MoviePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.MoviePictureBox.Location = new System.Drawing.Point(3, 119);
-            this.MoviePictureBox.Name = "MoviePictureBox";
-            this.MoviePictureBox.Size = new System.Drawing.Size(283, 278);
-            this.MoviePictureBox.TabIndex = 4;
-            this.MoviePictureBox.TabStop = false;
             // 
             // OrderButtonsTableLayoutPanel
             // 
@@ -456,7 +449,7 @@ namespace Assignment3RAD
             this.ButtonsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.2994F));
             this.ButtonsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.7006F));
             this.ButtonsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
-            this.ButtonsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
+            this.ButtonsTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
             this.ButtonsTableLayoutPanel.Controls.Add(this.CancelButton, 2, 1);
             this.ButtonsTableLayoutPanel.Controls.Add(this.StreamButton, 3, 1);
             this.ButtonsTableLayoutPanel.Controls.Add(this.BackButton, 0, 1);
@@ -470,7 +463,7 @@ namespace Assignment3RAD
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(141, 22);
+            this.CancelButton.Location = new System.Drawing.Point(140, 22);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(74, 23);
             this.CancelButton.TabIndex = 1;
@@ -480,7 +473,7 @@ namespace Assignment3RAD
             // 
             // StreamButton
             // 
-            this.StreamButton.Location = new System.Drawing.Point(221, 22);
+            this.StreamButton.Location = new System.Drawing.Point(220, 22);
             this.StreamButton.Name = "StreamButton";
             this.StreamButton.Size = new System.Drawing.Size(71, 23);
             this.StreamButton.TabIndex = 2;
@@ -497,6 +490,15 @@ namespace Assignment3RAD
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
+            // MoviePictureBox
+            // 
+            this.MoviePictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MoviePictureBox.Location = new System.Drawing.Point(3, 119);
+            this.MoviePictureBox.Name = "MoviePictureBox";
+            this.MoviePictureBox.Size = new System.Drawing.Size(283, 278);
+            this.MoviePictureBox.TabIndex = 4;
+            this.MoviePictureBox.TabStop = false;
             // 
             // OrderForm
             // 
@@ -518,7 +520,6 @@ namespace Assignment3RAD
             this.MovieSelectedGroupBox.ResumeLayout(false);
             this.MovieSelectedTableLayout.ResumeLayout(false);
             this.MovieSelectedTableLayout.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MoviePictureBox)).EndInit();
             this.OrderButtonsTableLayoutPanel.ResumeLayout(false);
             this.YourSelectionGroupBox.ResumeLayout(false);
             this.OrderTableLayoutPanel.ResumeLayout(false);
@@ -532,6 +533,7 @@ namespace Assignment3RAD
             this.GrandTotalTableLayoutPanel.ResumeLayout(false);
             this.GrandTotalTableLayoutPanel.PerformLayout();
             this.ButtonsTableLayoutPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.MoviePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,5 +1,12 @@
 ﻿namespace Assignment3RAD
 {
+    /// <summary>
+    /// Created by Ben M. Dunn 
+    /// Student #100098171
+    /// Final Version 11, novemeber 2016
+    /// 
+    /// see splashScreen.cs for more information. 
+    /// </summary>
     partial class SplashScreen
     {
         /// <summary>
@@ -30,8 +37,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.SplashScreenProgressBar = new System.Windows.Forms.ProgressBar();
-            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             this.SplashScreenTimer = new System.Windows.Forms.Timer(this.components);
+            this.LogoPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,18 +52,20 @@
             this.SplashScreenProgressBar.Step = 2;
             this.SplashScreenProgressBar.TabIndex = 0;
             // 
+            // SplashScreenTimer
+            // 
+            this.SplashScreenTimer.Interval = 1;
+            this.SplashScreenTimer.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // LogoPictureBox
             // 
+            this.LogoPictureBox.BackgroundImage = global::Assignment3RAD.Properties.Resources.Logo;
+            this.LogoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.LogoPictureBox.Location = new System.Drawing.Point(13, 13);
             this.LogoPictureBox.Name = "LogoPictureBox";
             this.LogoPictureBox.Size = new System.Drawing.Size(795, 405);
             this.LogoPictureBox.TabIndex = 1;
             this.LogoPictureBox.TabStop = false;
-            // 
-            // SplashScreenTimer
-            // 
-            this.SplashScreenTimer.Interval = 1;
-            this.SplashScreenTimer.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // SplashScreen
             // 

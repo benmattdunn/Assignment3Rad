@@ -83,6 +83,26 @@ namespace Assignment3RAD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DeadPool {
+            get {
+                object obj = ResourceManager.GetObject("DeadPool", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap deadpool_ver13 {
+            get {
+                object obj = ResourceManager.GetObject("deadpool_ver13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap deathRaceTwo {
             get {
                 object obj = ResourceManager.GetObject("deathRaceTwo", resourceCulture);
@@ -116,6 +136,16 @@ namespace Assignment3RAD.Properties {
         internal static System.Drawing.Bitmap justGoWithIt {
             get {
                 object obj = ResourceManager.GetObject("justGoWithIt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo {
+            get {
+                object obj = ResourceManager.GetObject("Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -167,6 +197,15 @@ namespace Assignment3RAD.Properties {
             get {
                 object obj = ResourceManager.GetObject("seasonOfTheWitch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream someSoundFile {
+            get {
+                return ResourceManager.GetStream("someSoundFile", resourceCulture);
             }
         }
         

@@ -1,4 +1,12 @@
-﻿namespace Assignment3RAD
+﻿/// <summary>
+/// Created by Ben M. Dunn 
+/// Student #100098171
+/// Final Version 11, novemeber 2016
+/// 
+/// Stream form, see streamForm.cs for more information. 
+/// </summary>
+
+namespace Assignment3RAD
 {
     partial class StreamForm
     {
@@ -28,6 +36,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.MessageLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.CenterOkBttnLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.OKButton = new System.Windows.Forms.Button();
@@ -35,6 +44,7 @@
             this.TitleMessagelabel = new System.Windows.Forms.Label();
             this.ChargeLabel = new System.Windows.Forms.Label();
             this.MovieLabel = new System.Windows.Forms.Label();
+            this.SomeTimer = new System.Windows.Forms.Timer(this.components);
             this.MessageLayoutPanel.SuspendLayout();
             this.CenterOkBttnLayoutPanel.SuspendLayout();
             this.FinalMessageLayoutPanel.SuspendLayout();
@@ -121,12 +131,18 @@
             this.MovieLabel.TabIndex = 2;
             this.MovieLabel.Text = "label3";
             // 
+            // SomeTimer
+            // 
+            this.SomeTimer.Enabled = true;
+            this.SomeTimer.Interval = 46000;
+            this.SomeTimer.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // StreamForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(284, 162);
+            this.ClientSize = new System.Drawing.Size(280, 158);
             this.ControlBox = false;
             this.Controls.Add(this.MessageLayoutPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -153,5 +169,6 @@
         private System.Windows.Forms.Label TitleMessagelabel;
         private System.Windows.Forms.Label ChargeLabel;
         private System.Windows.Forms.Label MovieLabel;
+        private System.Windows.Forms.Timer SomeTimer;
     }
 }

@@ -7,6 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+/// <summary>
+/// Created by Ben M. Dunn 
+/// Student #100098171
+/// Final Version 11, novemeber 2016
+/// 
+/// Selection form, imports the movies from program.cs and displays
+/// the apropriate keys. 
+/// </summary>
+
 
 namespace Assignment3RAD
 {
@@ -33,11 +42,22 @@ namespace Assignment3RAD
             this.MovieSelectionListBox.Sorted = true; //order the items after adding them. 
         }
 
+        /// <summary>
+        /// Dead but kept in for possible use later.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void YourSelectionInfoTableLayoutPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
+
+        /// <summary>
+        /// Opens the next form. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NextButton_Click(object sender, EventArgs e)
         {
             OrderForm orderForm = new OrderForm();

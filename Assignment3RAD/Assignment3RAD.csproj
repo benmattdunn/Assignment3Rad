@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="MovieLists.cs" />
     <Compile Include="OrderForm.cs">
       <SubType>Form</SubType>
@@ -74,6 +80,9 @@
     <Compile Include="StreamForm.Designer.cs">
       <DependentUpon>StreamForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,9 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ServiceClasses\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\avengers.jpg" />
@@ -172,6 +178,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\waitingForever.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeadPool.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\someSoundFile.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deadpool_ver13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
