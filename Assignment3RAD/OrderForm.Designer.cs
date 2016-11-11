@@ -1,4 +1,6 @@
-﻿namespace Assignment3RAD
+﻿using System.Threading;
+
+namespace Assignment3RAD
 {
     partial class OrderForm
     {
@@ -14,11 +16,43 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
+            //disposing of threads to prevent errors in forms movement. 
+            this._running = false;
+            this._smartAbortThread(this._movieCostCalculator);
             if (disposing && (components != null))
             {
                 components.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        /// <summary>
+        /// Saftly aborts a thread by making sure it's finished it's scope, then killing
+        /// it to prevent multithreading handups do to access on use of the abort method.
+        /// because of the blocking of code. Copied from previous assignment for ease
+        /// of use. 
+        /// 
+        /// copied from assignment 1.
+        /// </summary>
+        /// <param name="abortThisThread">Thread to safely abort</param>
+        private void _smartAbortThread(Thread abortThisThread)
+        {
+            bool threadNotAborted = true;
+            do
+            {
+                try
+                {
+                    abortThisThread.Abort();
+                    threadNotAborted = false; // will be blocked if failed.
+                }
+                catch (System.Exception)
+                {
+                    //do nothing, try again, because of the blocking nature of 
+                    // code execution of try/catch I can be sure that it will
+                    // keep attempting until the thread is successfully aborted.
+                }
+
+            } while (threadNotAborted);
         }
 
         #region Windows Form Designer generated code
@@ -54,7 +88,7 @@
             this.SubTotalTextBox = new System.Windows.Forms.TextBox();
             this.SubTotalLabel = new System.Windows.Forms.Label();
             this.SalesTaxTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.SalesTaxtextBox = new System.Windows.Forms.TextBox();
+            this.SalesTaxTextBox = new System.Windows.Forms.TextBox();
             this.SalesTaxLabel = new System.Windows.Forms.Label();
             this.GrandTotalTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.GrandTotalTextBox = new System.Windows.Forms.TextBox();
@@ -109,8 +143,9 @@
             // streamToolStripMenuItem
             // 
             this.streamToolStripMenuItem.Name = "streamToolStripMenuItem";
-            this.streamToolStripMenuItem.Size = new System.Drawing.Size(111, 22);
+            this.streamToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.streamToolStripMenuItem.Text = "Stream";
+            this.streamToolStripMenuItem.Click += new System.EventHandler(this.StreamClick);
             // 
             // cancelToolStripMenuItem
             // 
@@ -344,7 +379,7 @@
             this.SalesTaxTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.94203F));
             this.SalesTaxTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.49275F));
             this.SalesTaxTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.5942F));
-            this.SalesTaxTableLayoutPanel.Controls.Add(this.SalesTaxtextBox, 2, 0);
+            this.SalesTaxTableLayoutPanel.Controls.Add(this.SalesTaxTextBox, 2, 0);
             this.SalesTaxTableLayoutPanel.Controls.Add(this.SalesTaxLabel, 1, 0);
             this.SalesTaxTableLayoutPanel.Location = new System.Drawing.Point(3, 195);
             this.SalesTaxTableLayoutPanel.Name = "SalesTaxTableLayoutPanel";
@@ -353,13 +388,13 @@
             this.SalesTaxTableLayoutPanel.Size = new System.Drawing.Size(276, 42);
             this.SalesTaxTableLayoutPanel.TabIndex = 0;
             // 
-            // SalesTaxtextBox
+            // SalesTaxTextBox
             // 
-            this.SalesTaxtextBox.Location = new System.Drawing.Point(138, 3);
-            this.SalesTaxtextBox.Name = "SalesTaxtextBox";
-            this.SalesTaxtextBox.ReadOnly = true;
-            this.SalesTaxtextBox.Size = new System.Drawing.Size(100, 20);
-            this.SalesTaxtextBox.TabIndex = 0;
+            this.SalesTaxTextBox.Location = new System.Drawing.Point(138, 3);
+            this.SalesTaxTextBox.Name = "SalesTaxTextBox";
+            this.SalesTaxTextBox.ReadOnly = true;
+            this.SalesTaxTextBox.Size = new System.Drawing.Size(100, 20);
+            this.SalesTaxTextBox.TabIndex = 0;
             // 
             // SalesTaxLabel
             // 
@@ -451,6 +486,7 @@
             this.StreamButton.TabIndex = 2;
             this.StreamButton.Text = "Stream";
             this.StreamButton.UseVisualStyleBackColor = true;
+            this.StreamButton.Click += new System.EventHandler(this.StreamClick);
             // 
             // BackButton
             // 
@@ -535,7 +571,7 @@
         private System.Windows.Forms.TableLayoutPanel GrandTotalTableLayoutPanel;
         private System.Windows.Forms.Label GrandTotalLabel;
         private System.Windows.Forms.TextBox SubTotalTextBox;
-        private System.Windows.Forms.TextBox SalesTaxtextBox;
+        private System.Windows.Forms.TextBox SalesTaxTextBox;
         private System.Windows.Forms.TextBox GrandTotalTextBox;
         private System.Windows.Forms.CheckBox OwnMovieCheckBox;
     }
