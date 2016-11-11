@@ -20,12 +20,12 @@ namespace Assignment3RAD
         [STAThread]
         static void Main()
         {
-            _movielist = new MovieLists();
+            _movielist = new MovieLists(); //initialize movie list. 
 
 
-            MovieReferenceClass test = new MovieReferenceClass("Ceader Rapids", 2, new Bitmap((Bitmap)Resources.cedarRapids));
-            _movielist.movies.Add("test", test);
-            //catch for objects not being reference correctly, developement. 
+            //MovieReferenceClass test = new MovieReferenceClass("Ceader Rapids", 2, new Bitmap((Bitmap)Resources.cedarRapids));
+            //_movielist.movies.Add("test", test);
+            //catch for objects not being reference correctly, developement, but left in for good pratice.
             try
             {
                 //_movielist.movies.Add("Avengers", new MovieReferenceClass("Avengers", 2, null));

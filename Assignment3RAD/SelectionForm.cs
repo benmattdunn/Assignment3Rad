@@ -67,7 +67,9 @@ namespace Assignment3RAD
                 this.GroupSelectionMoviePictureBox.BackgroundImage = temp._image;
                 this.MovieTextBox.Text = temp._name;
                 this.GeneraTextBox.Text = Program._movielist.movieGenera[temp._type];
+                this.CostTextBox.Text = Program._movielist.movieCost[temp._type].ToString();
                 Program._movielist.selectedMovie = this.MovieSelectionListBox.GetItemText(MovieSelectionListBox.SelectedItem);
+                this.NextButton.Enabled = true; //as there is no way to "uncheck" a selection, this can be done basically once.
                 
                 //this.GroupSelectionMoviePictureBox.BackgroundImage = temp.
             }
